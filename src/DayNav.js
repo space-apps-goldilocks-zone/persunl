@@ -34,7 +34,13 @@ const DayNav = (props) => {
   return (
     <div>
       { suroundingDays.prefix }
-      <CurrentDayBullet weatherCondition={props.weatherCondition} />
+      <div style={{
+             display: "inline-block",
+             position: "relative",
+             top: "13px"
+           }}>
+        <CurrentDayBullet weatherCondition={props.weatherCondition} />
+      </div>
       { suroundingDays.suffix }
     </div>
   );

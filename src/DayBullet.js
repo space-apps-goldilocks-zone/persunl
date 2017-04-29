@@ -13,9 +13,16 @@ const DAY_LABELS = {
 };
 
 const DayBullet = (props) => (
-  <div>
+  <div style={{
+         display: "inline-block ",
+         margin: "0px 10px"
+       }}>
     <div>{ DAY_LABELS[props.day] }</div>
-    <div>•</div>
+    <div style={{
+      fontSize: "2.5em",
+      position: "relative",
+      top: "-15px"
+    }}>•</div>
   </div>
 );
 DayBullet.propTypes = {
