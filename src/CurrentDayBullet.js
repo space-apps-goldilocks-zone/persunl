@@ -13,7 +13,7 @@ const WeatherCondition = {
 
 const CurrentDayBullet = (props) => (
   <div style={{ display: "inline-block" }}>
-    <img src={ WeatherCondition[props.weatherCondition] } width="100" height="100" />
+    <img src={ WeatherCondition[props.weatherCondition] } width="100" height="100" alt=""/>
   </div>
 );
 CurrentDayBullet.propTypes = {
