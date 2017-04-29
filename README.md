@@ -94,9 +94,9 @@ You almost never need to update `create-react-app` itself: it delegates all the 
 
 When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
 
-To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
+To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `packageCurrentDayBullet.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
 
-In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
+In most cases bumping the `react-scripts` version in `packageCurrentDayBullet.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
 
 We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
 
@@ -112,23 +112,23 @@ After creation, your project should look like this:
 my-app/
   README.md
   node_modules/
-  package.json
+  packageCurrentDayBullet.json
   public/
     index.html
     favicon.ico
   src/
     App.css
-    App.js
-    App.test.js
+    AppCurrentDayBullet.js
+    App.testCurrentDayBullet.js
     index.css
-    index.js
+    indexCurrentDayBullet.js
     logo.svg
 ```
 
 For the project to build, **these files must exist with exact filenames**:
 
 * `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
+* `src/indexCurrentDayBullet.js` is the JavaScript entry point.
 
 You can delete or rename the other files.
 
@@ -224,7 +224,7 @@ You would need to install an ESLint plugin for your editor first.
 
 >**For Visual Studio Code users**
 
->VS Code ESLint plugin automatically detects Create React App's configuration file. So you do not need to create `eslintrc.json` at the root directory, except when you want to add your own rules. In that case, you should include CRA's config by adding this line:
+>VS Code ESLint plugin automatically detects Create React App's configuration file. So you do not need to create `eslintrcCurrentDayBullet.json` at the root directory, except when you want to add your own rules. In that case, you should include CRA's config by adding this line:
 
 >```js
 {
@@ -233,7 +233,7 @@ You would need to install an ESLint plugin for your editor first.
 }
 ```
 
-Then add this block to the `package.json` file of your project:
+Then add this block to the `packageCurrentDayBullet.json` file of your project:
 
 ```js
 {
@@ -260,7 +260,7 @@ Visual Studio Code supports live-editing and debugging out of the box with Creat
 
 You would need to have the latest version of [VS Code](https://code.visualstudio.com) and VS Code [Chrome Debugger Extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) installed.
 
-Then add the block below to your `launch.json` file and put it inside the `.vscode` folder in your app’s root directory.
+Then add the block below to your `launchCurrentDayBullet.json` file and put it inside the `.vscode` folder in your app’s root directory.
 
 ```json
 {
@@ -306,7 +306,7 @@ While you can still use `require()` and `module.exports`, we encourage you to us
 
 For example:
 
-### `Button.js`
+### `ButtonCurrentDayBullet.js`
 
 ```js
 import React, { Component } from 'react';
@@ -320,7 +320,7 @@ class Button extends Component {
 export default Button; // Don’t forget to use export default!
 ```
 
-### `DangerButton.js`
+### `DangerButtonCurrentDayBullet.js`
 
 
 ```js
@@ -360,11 +360,11 @@ This project setup uses [Webpack](https://webpack.github.io/) for handling all a
 }
 ```
 
-### `Button.js`
+### `ButtonCurrentDayBullet.js`
 
 ```js
 import React, { Component } from 'react';
-import './Button.css'; // Tell Webpack that Button.js uses these styles
+import './Button.css'; // Tell Webpack that ButtonCurrentDayBullet.js uses these styles
 
 class Button extends Component {
   render() {
@@ -378,7 +378,7 @@ class Button extends Component {
 
 In development, expressing dependencies this way allows your styles to be reloaded on the fly as you edit them. In production, all CSS files will be concatenated into a single minified `.css` file in the build output.
 
-If you are concerned about using Webpack-specific semantics, you can put all your CSS right into `src/index.css`. It would still be imported from `src/index.js`, but you could always remove that import if you later migrate to a different build tool.
+If you are concerned about using Webpack-specific semantics, you can put all your CSS right into `src/index.css`. It would still be imported from `src/indexCurrentDayBullet.js`, but you could always remove that import if you later migrate to a different build tool.
 
 ## Post-Processing CSS
 
@@ -425,7 +425,7 @@ First, let’s install the command-line interface for Sass:
 npm install node-sass --save-dev
 ```
 
-Then in `package.json`, add the following lines to `scripts`:
+Then in `packageCurrentDayBullet.json`, add the following lines to `scripts`:
 
 ```diff
    "scripts": {
@@ -438,7 +438,7 @@ Then in `package.json`, add the following lines to `scripts`:
 
 >Note: To use a different preprocessor, replace `build-css` and `watch-css` commands according to your preprocessor’s documentation.
 
-Now you can rename `src/App.css` to `src/App.scss` and run `npm run watch-css`. The watcher will find every Sass file in `src` subdirectories, and create a corresponding CSS file next to it, in our case overwriting `src/App.css`. Since `src/App.js` still imports `src/App.css`, the styles become a part of your application. You can now edit `src/App.scss`, and `src/App.css` will be regenerated.
+Now you can rename `src/App.css` to `src/App.scss` and run `npm run watch-css`. The watcher will find every Sass file in `src` subdirectories, and create a corresponding CSS file next to it, in our case overwriting `src/App.css`. Since `src/AppCurrentDayBullet.js` still imports `src/App.css`, the styles become a part of your application. You can now edit `src/App.scss`, and `src/App.css` will be regenerated.
 
 To share variables between Sass files, you can use Sass imports. For example, `src/App.scss` and other component style files could include `@import "./shared.scss";` with variable definitions.
 
@@ -566,7 +566,7 @@ The `public` folder is useful as a workaround for a number of less common cases:
 
 * You need a file with a specific name in the build output, such as [`manifest.webmanifest`](https://developer.mozilla.org/en-US/docs/Web/Manifest).
 * You have thousands of images and need to dynamically reference their paths.
-* You want to include a small script like [`pace.js`](http://github.hubspot.com/pace/docs/welcome/) outside of the bundled code.
+* You want to include a small script like [`paceCurrentDayBullet.js`](http://github.hubspot.com/pace/docs/welcome/) outside of the bundled code.
 * Some library may be incompatible with Webpack and you have no other option but to include it as a `<script>` tag.
 
 Note that if you add a `<script>` that declares global variables, you also need to read the next section on using them.
@@ -596,7 +596,7 @@ npm install react-bootstrap --save
 npm install bootstrap@3 --save
 ```
 
-Import Bootstrap CSS and optionally Bootstrap theme CSS in the beginning of your ```src/index.js``` file:
+Import Bootstrap CSS and optionally Bootstrap theme CSS in the beginning of your ```src/indexCurrentDayBullet.js``` file:
 
 ```js
 import 'bootstrap/dist/css/bootstrap.css';
@@ -605,13 +605,13 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 // components takes precedence over default styles.
 ```
 
-Import required React Bootstrap components within ```src/App.js``` file or your custom component files:
+Import required React Bootstrap components within ```src/AppCurrentDayBullet.js``` file or your custom component files:
 
 ```js
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 ```
 
-Now you are ready to use the imported React Bootstrap components within your component hierarchy defined in the render method. Here is an example [`App.js`](https://gist.githubusercontent.com/gaearon/85d8c067f6af1e56277c82d19fd4da7b/raw/6158dd991b67284e9fc8d70b9d973efe87659d72/App.js) redone using React Bootstrap.
+Now you are ready to use the imported React Bootstrap components within your component hierarchy defined in the render method. Here is an example [`AppCurrentDayBullet.js`](https://gist.githubusercontent.com/gaearon/85d8c067f6af1e56277c82d19fd4da7b/raw/6158dd991b67284e9fc8d70b9d973efe87659d72/App.js) redone using React Bootstrap.
 
 ### Using a Custom Theme
 
@@ -633,9 +633,9 @@ Recent versions of [Flow](http://flowtype.org/) work with Create React App proje
 To add Flow to a Create React App project, follow these steps:
 
 1. Run `npm install --save-dev flow-bin` (or `yarn add --dev flow-bin`).
-2. Add `"flow": "flow"` to the `scripts` section of your `package.json`.
+2. Add `"flow": "flow"` to the `scripts` section of your `packageCurrentDayBullet.json`.
 3. Run `npm run flow -- init` (or `yarn flow -- init`) to create a [`.flowconfig` file](https://flowtype.org/docs/advanced-configuration.html) in the root directory.
-4. Add `// @flow` to any files you want to type check (for example, to `src/App.js`).
+4. Add `// @flow` to any files you want to type check (for example, to `src/AppCurrentDayBullet.js`).
 
 Now you can run `npm run flow` (or `yarn flow`) to check the files for type errors.
 You can optionally use an IDE like [Nuclide](https://nuclide.io/docs/languages/flow/) for a better integrated experience.
@@ -802,7 +802,7 @@ For example, a production setup might look like this after the app is deployed:
 
 Such setup is **not** required. However, if you **do** have a setup like this, it is convenient to write requests like `fetch('/api/todos')` without worrying about redirecting them to another host or port during development.
 
-To tell the development server to proxy any unknown requests to your API server in development, add a `proxy` field to your `package.json`, for example:
+To tell the development server to proxy any unknown requests to your API server in development, add a `proxy` field to your `packageCurrentDayBullet.json`, for example:
 
 ```js
   "proxy": "http://localhost:4000",
@@ -906,13 +906,13 @@ We recommend that you use a separate tool for browser end-to-end tests if you ne
 
 Jest will look for test files with any of the following popular naming conventions:
 
-* Files with `.js` suffix in `__tests__` folders.
-* Files with `.test.js` suffix.
-* Files with `.spec.js` suffix.
+* Files with `CurrentDayBullet.js` suffix in `__tests__` folders.
+* Files with `.testCurrentDayBullet.js` suffix.
+* Files with `.specCurrentDayBullet.js` suffix.
 
-The `.test.js` / `.spec.js` files (or the `__tests__` folders) can be located at any depth under the `src` top level folder.
+The `.testCurrentDayBullet.js` / `.specCurrentDayBullet.js` files (or the `__tests__` folders) can be located at any depth under the `src` top level folder.
 
-We recommend to put the test files (or `__tests__` folders) next to the code they are testing so that relative imports appear shorter. For example, if `App.test.js` and `App.js` are in the same folder, the test just needs to `import App from './App'` instead of a long relative path. Colocation also helps find tests more quickly in larger projects.
+We recommend to put the test files (or `__tests__` folders) next to the code they are testing so that relative imports appear shorter. For example, if `App.testCurrentDayBullet.js` and `AppCurrentDayBullet.js` are in the same folder, the test just needs to `import App from './App'` instead of a long relative path. Colocation also helps find tests more quickly in larger projects.
 
 ### Command Line Interface
 
@@ -965,7 +965,7 @@ it('renders without crashing', () => {
 });
 ```
 
-This test mounts a component and makes sure that it didn’t throw during rendering. Tests like this provide a lot value with very little effort so they are great as a starting point, and this is the test you will find in `src/App.test.js`.
+This test mounts a component and makes sure that it didn’t throw during rendering. Tests like this provide a lot value with very little effort so they are great as a starting point, and this is the test you will find in `src/App.testCurrentDayBullet.js`.
 
 When you encounter bugs caused by changing components, you will gain a deeper insight into which parts of them are worth testing in your application. This might be a good time to introduce more specific tests asserting specific expected output or behavior.
 
@@ -1020,7 +1020,7 @@ npm install --save-dev jest-enzyme
 ```
 
 ```js
-// src/setupTests.js
+// src/setupTestsCurrentDayBullet.js
 import 'jest-enzyme';
 ```
 
@@ -1042,11 +1042,11 @@ and then use them in your tests like you normally do.
 
 >Note: this feature is available with `react-scripts@0.4.0` and higher.
 
-If your app uses a browser API that you need to mock in your tests or if you just need a global setup before running your tests, add a `src/setupTests.js` to your project. It will be automatically executed before running your tests.
+If your app uses a browser API that you need to mock in your tests or if you just need a global setup before running your tests, add a `src/setupTestsCurrentDayBullet.js` to your project. It will be automatically executed before running your tests.
 
 For example:
 
-#### `src/setupTests.js`
+#### `src/setupTestsCurrentDayBullet.js`
 ```js
 const localStorageMock = {
   getItem: jest.fn(),
@@ -1129,7 +1129,7 @@ The build command will check for linter warnings and fail if any are found.
 
 ### Disabling jsdom
 
-By default, the `package.json` of the generated project looks like this:
+By default, the `packageCurrentDayBullet.json` of the generated project looks like this:
 
 ```js
   // ...
@@ -1210,7 +1210,7 @@ You can turn your React app into a [Progressive Web App](https://developers.goog
 
 ## Deployment
 
-`npm run build` creates a `build` directory with a production build of your app. Set up your favourite HTTP server so that a visitor to your site is served `index.html`, and requests to static paths like `/static/js/main.<hash>.js` are served with the contents of the `/static/js/main.<hash>.js` file.
+`npm run build` creates a `build` directory with a production build of your app. Set up your favourite HTTP server so that a visitor to your site is served `index.html`, and requests to static paths like `/static/js/main.<hash>CurrentDayBullet.js` are served with the contents of the `/static/js/main.<hash>CurrentDayBullet.js` file.
 
 ### Static Server
 
@@ -1286,7 +1286,7 @@ Now requests to `/todos/42` will be handled correctly both in development and in
 ### Building for Relative Paths
 
 By default, Create React App produces a build assuming your app is hosted at the server root.<br>
-To override this, specify the `homepage` in your `package.json`, for example:
+To override this, specify the `homepage` in your `packageCurrentDayBullet.json`, for example:
 
 ```js
   "homepage": "http://mywebsite.com/relativepath",
@@ -1298,7 +1298,7 @@ This will let Create React App correctly infer the root path to use in the gener
 
 >Note: this feature is available with `react-scripts@0.9.0` and higher.
 
-If you are not using the HTML5 `pushState` history API or not using client-side routing at all, it is unnecessary to specify the URL from which your app will be served. Instead, you can put this in your `package.json`:
+If you are not using the HTML5 `pushState` history API or not using client-side routing at all, it is unnecessary to specify the URL from which your app will be served. Instead, you can put this in your `packageCurrentDayBullet.json`:
 
 ```js
   "homepage": ".",
@@ -1314,7 +1314,7 @@ See [this](https://medium.com/@to_pe/deploying-create-react-app-on-microsoft-azu
 
 Install the Firebase CLI if you haven’t already by running `npm install -g firebase-tools`. Sign up for a [Firebase account](https://console.firebase.google.com/) and create a new project. Run `firebase login` and login with your previous created Firebase account.
 
-Then run the `firebase init` command from your project’s root. You need to choose the **Hosting: Configure and deploy Firebase Hosting sites** and choose the Firebase project you created in the previous step. You will need to agree with `database.rules.json` being created, choose `build` as the public directory, and also agree to **Configure as a single-page app** by replying with `y`.
+Then run the `firebase init` command from your project’s root. You need to choose the **Hosting: Configure and deploy Firebase Hosting sites** and choose the Firebase project you created in the previous step. You will need to agree with `database.rulesCurrentDayBullet.json` being created, choose `build` as the public directory, and also agree to **Configure as a single-page app** by replying with `y`.
 
 ```sh
     === Project Setup
@@ -1330,9 +1330,9 @@ Then run the `firebase init` command from your project’s root. You need to cho
     Firebase Realtime Database Rules allow you to define how your data should be
     structured and when your data can be read from and written to.
 
-    ? What file should be used for Database Rules? database.rules.json
-    ✔  Database Rules for example-app-fd690 have been downloaded to database.rules.json.
-    Future modifications to database.rules.json will update Database Rules when you run
+    ? What file should be used for Database Rules? database.rulesCurrentDayBullet.json
+    ✔  Database Rules for example-app-fd690 have been downloaded to database.rulesCurrentDayBullet.json.
+    Future modifications to database.rulesCurrentDayBullet.json will update Database Rules when you run
     firebase deploy.
 
     === Hosting Setup
@@ -1345,7 +1345,7 @@ Then run the `firebase init` command from your project’s root. You need to cho
     ? Configure as a single-page app (rewrite all urls to /index.html)? Yes
     ✔  Wrote build/index.html
 
-    i  Writing configuration info to firebase.json...
+    i  Writing configuration info to firebaseCurrentDayBullet.json...
     i  Writing project information to .firebaserc...
 
     ✔  Firebase initialization complete!
@@ -1375,12 +1375,12 @@ For more information see [Add Firebase to your JavaScript Project](https://fireb
 
 >Note: this feature is available with `react-scripts@0.2.0` and higher.
 
-#### Step 1: Add `homepage` to `package.json`
+#### Step 1: Add `homepage` to `packageCurrentDayBullet.json`
 
 **The step below is important!**<br>
 **If you skip it, your app will not deploy correctly.**
 
-Open your `package.json` and add a `homepage` field:
+Open your `packageCurrentDayBullet.json` and add a `homepage` field:
 
 ```js
   "homepage": "https://myusername.github.io/my-app",
@@ -1388,7 +1388,7 @@ Open your `package.json` and add a `homepage` field:
 
 Create React App uses the `homepage` field to determine the root URL in the built HTML file.
 
-#### Step 2: Install `gh-pages` and add `deploy` to `scripts` in `package.json`
+#### Step 2: Install `gh-pages` and add `deploy` to `scripts` in `packageCurrentDayBullet.json`
 
 Now, whenever you run `npm run build`, you will see a cheat sheet with instructions on how to deploy to GitHub Pages.
 
@@ -1398,7 +1398,7 @@ To publish it at [https://myusername.github.io/my-app](https://myusername.github
 npm install --save-dev gh-pages
 ```
 
-Add the following scripts in your `package.json`:
+Add the following scripts in your `packageCurrentDayBullet.json`:
 
 ```js
   // ...
@@ -1515,7 +1515,7 @@ When you build the project, Create React App will place the `public` folder cont
 
 2. Install `serve` by running `npm install --save serve`.
 
-3. Add this line to `scripts` in `package.json`:
+3. Add this line to `scripts` in `packageCurrentDayBullet.json`:
     
     ```
     "now-start": "serve build/",
@@ -1566,7 +1566,7 @@ BROWSER | :white_check_mark: | :x: | By default, Create React App will open the 
 HOST | :white_check_mark: | :x: | By default, the development web server binds to `localhost`. You may use this variable to specify a different host.
 PORT | :white_check_mark: | :x: | By default, the development web server will attempt to listen on port 3000 or prompt you to attempt the next available port. You may use this variable to specify a different port.
 HTTPS | :white_check_mark: | :x: | When set to `true`, Create React App will run the development server in `https` mode.
-PUBLIC_URL | :x: | :white_check_mark: | Create React App assumes your application is hosted at the serving web server's root or a subpath as specified in [`package.json` (`homepage`)](#building-for-relative-paths). Normally, Create React App ignores the hostname. You may use this variable to force assets to be referenced verbatim to the url you provide (hostname included). This may be particularly useful when using a CDN to host your application.
+PUBLIC_URL | :x: | :white_check_mark: | Create React App assumes your application is hosted at the serving web server's root or a subpath as specified in [`packageCurrentDayBullet.json` (`homepage`)](#building-for-relative-paths). Normally, Create React App ignores the hostname. You may use this variable to force assets to be referenced verbatim to the url you provide (hostname included). This may be particularly useful when using a CDN to host your application.
 CI | :large_orange_diamond: | :white_check_mark: | When set to `true`, Create React App treats warnings as failures in the build. It also makes the test runner non-watching. Most CIs set this flag by default.
 
 ## Troubleshooting
@@ -1577,7 +1577,7 @@ When you save a file while `npm start` is running, the browser should refresh wi
 If this doesn’t happen, try one of the following workarounds:
 
 * If your project is in a Dropbox folder, try moving it out.
-* If the watcher doesn’t see a file called `index.js` and you’re referencing it by the folder name, you [need to restart the watcher](https://github.com/facebookincubator/create-react-app/issues/1164) due to a Webpack bug.
+* If the watcher doesn’t see a file called `indexCurrentDayBullet.js` and you’re referencing it by the folder name, you [need to restart the watcher](https://github.com/facebookincubator/create-react-app/issues/1164) due to a Webpack bug.
 * Some editors like Vim and IntelliJ have a “safe write” feature that currently breaks the watcher. You will need to disable it. Follow the instructions in [“Working with editors supporting safe write”](https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write).
 * If your project path contains parentheses, try moving the project to a path without them. This is caused by a [Webpack watcher bug](https://github.com/webpack/watchpack/issues/42).
 * On Linux and macOS, you might need to [tweak system settings](https://webpack.github.io/docs/troubleshooting.html#not-enough-watchers) to allow more watchers.

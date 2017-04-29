@@ -7,3 +7,9 @@ export const DAYS = {
   SAT: "Saturday",
   SUN: "Sunday"
 };
+
+export const WEATHER_COND = {
+  SUNNY: "Sunny",
+  PARTLY_CLOUDY: "Partly Cloudy",
+  CLOUDY: "Fully Cloudy"
+};

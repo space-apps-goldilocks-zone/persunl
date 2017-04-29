@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { DAYS } from "./constants";
 import DayBullet from "./DayBullet";
+import CurrentDayBullet from "./CurrentDayBullet"
 
 const daysOfTheWeek = [
   DAYS.MON,
@@ -21,14 +22,24 @@ const daysSurrounding = (day) => {
     result.push(<DayBullet key={i} day={daysOfTheWeek[(dayIndex + i) % 7]} />)
   }
 
-  return [].concat(result.slice(4), result.slice(1, 4));
+  return {
+    'prefix': result.slice(4),
+    'suffix': result.slice(1, 4)
+  };
 };
 
-const DayNav = (props) => (
-  <div>
-    { daysSurrounding(props.dayOfWeek)}
-  </div>
-);
+const DayNav = (props) => {
+  const suroundingDays = daysSurrounding(props.dayOfWeek);
+
+  return (
+    <div>
+      { suroundingDays.prefix }
+      <CurrentDayBullet weatherCondition={props.weatherCondition} />
+      { suroundingDays.suffix }
+    </div>
+  );
+};
+
 DayNav.propTypes = {
   dayOfWeek: PropTypes.string
 };
