@@ -3,6 +3,7 @@ import "./App.css";
 import AppBar from "./AppBar";
 import DayNav from "./DayNav";
 import TemperatureAndDay from "./TemperatureAndDay";
+import UvLevel from "./UvLevel";
 import { DAYS, WEATHER_COND } from "./constants";
 
 const store = {
@@ -51,6 +52,7 @@ class App extends Component {
         <AppBar />
         <DayNav weatherCondition={ WEATHER_COND.SUNNY } dayOfWeek={ DAYS.SAT }/>
         <TemperatureAndDay dayOfWeek={ store.today } temperature={ store[store.today].temperature } />
+        <UvLevel uvIndex={ store[store.today].uvIndex } />
       </div>
     );
   }
