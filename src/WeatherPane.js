@@ -10,7 +10,7 @@ import { DAYS, WEATHER_COND } from "./constants";
 const WeatherPane = (props) =>  (
   <div className={ props.className }>
     <section style={{ margin: "1em 0" }}>
-      <DayNav weatherCondition={ WEATHER_COND.SUNNY } dayOfWeek={ DAYS.SAT }/>
+      <DayNav weatherCondition={ props.conditions.weatherCondition } dayOfWeek={ props.dayOfWeek }/>
     </section>
 
     <section style={{ marginx: "1em 0" }}>
