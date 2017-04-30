@@ -6,8 +6,8 @@ import UvLevel from "./UvLevel";
 import SunWheel from "./SunWheel";
 import { DAYS, WEATHER_COND } from "./constants";
 
-const WeatherPanel = (props) =>  (
-  <div>
+const WeatherPane = (props) =>  (
+  <div className={ props.className }>
     <section style={{ margin: "2em 0" }}>
       <DayNav weatherCondition={ WEATHER_COND.SUNNY } dayOfWeek={ DAYS.SAT }/>
     </section>
@@ -25,9 +25,10 @@ const WeatherPanel = (props) =>  (
     </section>
   </div>
 );
-WeatherPanel.propTypes = {
+WeatherPane.propTypes = {
+  className: PropTypes.string,
   dayOfWeek: PropTypes.string.isRequired,
   conditions: PropTypes.object.isRequired
 };
 
-export default WeatherPanel;
+export default WeatherPane;
