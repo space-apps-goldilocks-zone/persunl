@@ -1,9 +1,15 @@
 import React from "react";
-import sunWheelImage from "./images/sun-wheel.svg";
+import sunWheelImage from "./images/sun-wheel.png";
 
 const SunWheel = (props) => (
   <div>
-    <img src={sunWheelImage} alt="" width="300px"/>
+    <div style={{
+      backgroundSize: "cover",
+      backgroundImage: `url(${sunWheelImage})`,
+      display: "inline-block",
+      height: "120px",
+      width: "320px"
+    }} />
   </div>
 );
 
