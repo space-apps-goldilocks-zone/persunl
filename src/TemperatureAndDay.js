@@ -19,7 +19,7 @@ const TemperatureAndDay = (props) => (
   </div>
 );
 TemperatureAndDay.propTypes = {
-  dayOfWeek: PropTypes.string.isRequired,
+  dayOfWeek: PropTypes.number.isRequired,
   temperature: PropTypes.number.isRequired
 };
 

@@ -26,7 +26,7 @@ const DayBullet = (props) => (
   </div>
 );
 DayBullet.propTypes = {
-  day: PropTypes.string
+  day: PropTypes.number.isRequired
 };
 
 export default DayBullet

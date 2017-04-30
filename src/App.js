@@ -15,9 +15,27 @@ const backgroundByWeatherCondition = {
 };
 
 const store = {
-  currentDay: DAYS.THU,
+  today: DAYS.SUN,
 
   data: [{
+    dayOfWeek: DAYS.FRI,
+    temperature: 17,
+    tip: TIPS.VITAMIN_D,
+    uvStrength: 1,
+    weatherCondition: WEATHER_COND.CLOUDY
+  }, {
+    dayOfWeek: DAYS.SAT,
+    temperature: 28,
+    tip: TIPS.WARNING,
+    uvStrength: 4,
+    weatherCondition: WEATHER_COND.SUNNY
+  }, {
+    dayOfWeek: DAYS.SUN,
+    temperature: 32,
+    tip: TIPS.WARNING,
+    uvStrength: 4,
+    weatherCondition: WEATHER_COND.SUNNY
+  }, {
     dayOfWeek: DAYS.MON,
     temperature: 21,
     tip: TIPS.SUNSCREEN,
@@ -41,30 +59,11 @@ const store = {
     tip: TIPS.VITAMIN_D,
     uvStrength: 2,
     weatherCondition: WEATHER_COND.PARTLY_CLOUDY
-  }, {
-    dayOfWeek: DAYS.FRI,
-    temperature: 17,
-    tip: TIPS.VITAMIN_D,
-    uvStrength: 1,
-    weatherCondition: WEATHER_COND.CLOUDY
-  }, {
-    dayOfWeek: DAYS.SAT,
-    temperature: 28,
-    tip: TIPS.WARNING,
-    uvStrength: 4,
-    weatherCondition: WEATHER_COND.SUNNY
-  }, {
-    dayOfWeek: DAYS.SUN,
-    temperature: 32,
-    tip: TIPS.WARNING,
-    uvStrength: 4,
-    weatherCondition: WEATHER_COND.SUNNY
   }]
 };
 
 class App extends Component {
   render() {
-    const currentDayWeather = store.data.find(data => data.dayOfWeek === store.currentDay);
     return (
       <div style={{ textAlign: "center" }}>
         <div style={{
@@ -77,20 +76,21 @@ class App extends Component {
 
         <ReactSwipe swipeOptions={{
                       continuous: false,
-                      disableScroll: true
+                      disableScroll: true,
+                      startSlide: 2
                     }}>
           {
-            store.data.map((data, idx) => {
-              const i = 1;
-              return (
+            store.data.map((data, idx) => (
               <div key={idx}
                      style={{
                        backgroundImage: `url(${backgroundByWeatherCondition[data.weatherCondition]})`,
                      }}>
-                <WeatherPane key={idx} dayOfWeek={ data.dayOfWeek } conditions={ data } />
+                <WeatherPane key={idx}
+                             dayOfWeek={ data.dayOfWeek }
+                             conditions={ data }
+                             today={ store.today } />
               </div>
-            )}
-              )
+            ))
           }
         </ReactSwipe>
 

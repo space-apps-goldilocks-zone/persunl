@@ -5,12 +5,13 @@ import TemperatureAndDay from "./TemperatureAndDay";
 import UvStrength from "./UvStrength";
 import Tip from "./Tip";
 import SunWheel from "./SunWheel";
-import { DAYS, WEATHER_COND } from "./constants";
 
 const WeatherPane = (props) =>  (
   <div className={ props.className }>
     <section style={{ margin: "1em 0" }}>
-      <DayNav weatherCondition={ props.conditions.weatherCondition } dayOfWeek={ props.dayOfWeek }/>
+      <DayNav weatherCondition={ props.conditions.weatherCondition }
+              dayOfWeek={ props.dayOfWeek }
+              today={ props.today } />
     </section>
 
     <section style={{ marginx: "1em 0" }}>
@@ -34,7 +35,7 @@ const WeatherPane = (props) =>  (
 );
 WeatherPane.propTypes = {
   className: PropTypes.string,
-  dayOfWeek: PropTypes.string.isRequired,
+  dayOfWeek: PropTypes.number.isRequired,
   conditions: PropTypes.object.isRequired
 };
 

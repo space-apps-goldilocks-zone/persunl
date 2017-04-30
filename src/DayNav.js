@@ -47,7 +47,7 @@ const DayNav = (props) => {
 };
 
 DayNav.propTypes = {
-  dayOfWeek: PropTypes.string
+  dayOfWeek: PropTypes.number.isRequired
 };
 
 export default DayNav
