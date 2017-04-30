@@ -68,6 +68,8 @@ class App extends Component {
       <div style={{ textAlign: "center" }}>
         <div style={{
                position: "absolute" ,
+               left: "-150px",
+               top: "10px",
                width: "100%",
                zIndex: 100
              }} >

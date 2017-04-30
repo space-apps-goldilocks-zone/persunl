@@ -1,7 +1,10 @@
 import React from "react";
+import profileIcon from "./images/profile.png";
 
 const AppBar = () => (
-    <div>AppBar is here</div>
+    <div>
+        <img src={ profileIcon } alt="" width="40px"/>
+    </div>
 );
 
 export default AppBar
