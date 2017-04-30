@@ -75,7 +75,10 @@ class App extends Component {
           <AppBar />
         </div>
 
-        <ReactSwipe>
+        <ReactSwipe swipeOptions={{
+                      continuous: false,
+                      disableScroll: true
+                    }}>
           {
             store.data.map((data, idx) => {
               const i = 1;
