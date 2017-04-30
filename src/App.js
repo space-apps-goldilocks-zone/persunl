@@ -20,37 +20,37 @@ const store = {
   data: [{
     dayOfWeek: DAYS.MON,
     temperature: 21,
-    uvIndex: 3,
+    uvStrength: 3,
     weatherCondition: WEATHER_COND.SUNNY
   }, {
     dayOfWeek: DAYS.TUE,
     temperature: 21,
-    uvIndex: 3,
+    uvStrength: 3,
     weatherCondition: WEATHER_COND.SUNNY
   }, {
     dayOfWeek: DAYS.WED,
     temperature: 20,
-    uvIndex: 3,
+    uvStrength: 2,
     weatherCondition: WEATHER_COND.CLOUDY
   }, {
     dayOfWeek: DAYS.THU,
     temperature: 19,
-    uvIndex: 5,
+    uvStrength: 2,
     weatherCondition: WEATHER_COND.PARTLY_CLOUDY
   }, {
     dayOfWeek: DAYS.FRI,
     temperature: 17,
-    uvIndex: 3,
+    uvStrength: 1,
     weatherCondition: WEATHER_COND.CLOUDY
   }, {
     dayOfWeek: DAYS.SAT,
     temperature: 28,
-    uvIndex: 10,
+    uvStrength: 4,
     weatherCondition: WEATHER_COND.SUNNY
   }, {
     dayOfWeek: DAYS.SUN,
     temperature: 32,
-    uvIndex: 7,
+    uvStrength: 4,
     weatherCondition: WEATHER_COND.SUNNY
   }]
 };

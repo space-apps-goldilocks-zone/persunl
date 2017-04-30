@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import DayNav from "./DayNav";
 import TemperatureAndDay from "./TemperatureAndDay";
-import UvLevel from "./UvLevel";
+import UvStrength from "./UvStrength";
 import SunWheel from "./SunWheel";
 import { DAYS, WEATHER_COND } from "./constants";
 
@@ -17,7 +17,7 @@ const WeatherPane = (props) =>  (
     </section>
 
     <section style={{ margin: "2em 0" }}>
-      <UvLevel uvIndex={ props.conditions.uvIndex } />
+      <UvStrength value={ props.conditions.uvStrength } />
     </section>
 
     <section style={{ marginTop: "1em" }}>
