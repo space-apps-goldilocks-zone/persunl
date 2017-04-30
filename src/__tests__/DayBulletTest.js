@@ -7,11 +7,6 @@ describe("DayBullet:", () => {
   it("render", () => {
     const component = shallow(<DayBullet day={ DAYS.TUE }/>);
 
-    expect(component).toContainReact(
-      <div>
-        <div>T</div>
-        <div>•</div>
-      </div>
-    );
+    expect(component).toHaveText("T•");
   });
 });

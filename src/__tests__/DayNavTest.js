@@ -14,7 +14,13 @@ describe("DayNav:", () => {
         <DayBullet day={ DAYS.SAT }/>
         <DayBullet day={ DAYS.SUN }/>
         <DayBullet day={ DAYS.MON }/>
-        <CurrentDayBullet weatherCondition={ WEATHER_COND.SUNNY }/>
+        <div style={{
+               display: "inline-block",
+               position: "relative",
+               top: "13px"
+             }}>
+          <CurrentDayBullet weatherCondition={ WEATHER_COND.SUNNY }/>
+        </div>
         <DayBullet day={ DAYS.WED }/>
         <DayBullet day={ DAYS.THU }/>
         <DayBullet day={ DAYS.FRI }/>
