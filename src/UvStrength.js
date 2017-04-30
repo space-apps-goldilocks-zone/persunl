@@ -17,7 +17,7 @@ const UvStrength = (props) => (
     >UV Strength:</span>
 
     {
-      Array.apply(null, Array(props.value)).map((i) =>
+      Array.apply(null, Array(props.value)).map((_, i) =>
         <span style={{
                 color: uvStrengths[props.value - 1],
                 verticalAlign: "middle"
