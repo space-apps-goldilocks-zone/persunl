@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactSwipe from 'react-swipe';
 
-import "./App.css";
 import AppBar from "./AppBar";
 import WeatherPane from "./WeatherPane";
 import { DAYS, WEATHER_COND } from "./constants";
@@ -60,7 +59,7 @@ class App extends Component {
   render() {
     const currentDayWeather = store.data.find(data => data.dayOfWeek === store.currentDay);
     return (
-      <div className="App">
+      <div style={{ textAlign: "center" }}>
         <div style={{
                position: "absolute" ,
                width: "100%",
