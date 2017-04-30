@@ -20,13 +20,13 @@ const store = {
   data: [{
     dayOfWeek: DAYS.FRI,
     temperature: 17,
-    tip: TIPS.VITAMIN_D,
+    tip: TIPS.VITAMIN_D_UNDER,
     uvStrength: 1,
     weatherCondition: WEATHER_COND.CLOUDY
   }, {
     dayOfWeek: DAYS.SAT,
     temperature: 28,
-    tip: TIPS.WARNING,
+    tip: TIPS.VITAMIN_D_GOOD,
     uvStrength: 4,
     weatherCondition: WEATHER_COND.SUNNY
   }, {

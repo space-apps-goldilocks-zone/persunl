@@ -2,6 +2,8 @@ import tipSunscreenIcon from "./images/tip-sunscreen.png";
 import tipWarningIcon from "./images/tip-warning.png";
 import tipShirtIcon from "./images/tip-shirt.png";
 import tipSunIcon from "./images/tip-sun.png";
+import tipGoodIcon from "./images/tip-good.png";
+import tipUnderIcon from "./images/tip-under.png";
 
 export const DAYS = {
   MON: 1,
@@ -35,6 +37,16 @@ export const TIPS = {
     icon: tipWarningIcon,
     message: "You are apporaching your daily exposure limit. Avoid the sun.",
     title: "WARNING!"
+  },
+  VITAMIN_D_GOOD: {
+    icon: tipGoodIcon,
+    message: "You boosted your Vitamin D.",
+    title: "Woohoo!"
+  },
+  VITAMIN_D_UNDER: {
+    icon: tipUnderIcon,
+    message: "You didn't get enough sunlight to boost your Vitamin D.",
+    title: "Important!"
   },
   VITAMIN_D: {
     icon: tipSunIcon,
